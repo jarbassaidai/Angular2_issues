@@ -36,5 +36,5 @@ example how to get angular2 issues through the gethub api
 <em>"click to expand"</em> displayed in the color <em>blue</em>. 
 </p>
 <ul> know bugs: 
-<li> assignee is a array of names that is not handled correctly </li> 
+<li> GitHub Api for Since with a format of YYYY-MM-DDTHH:MM:SSZ will through and server error from time to time </li> 
 </ul>
