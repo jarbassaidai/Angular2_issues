@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Issue} from './issue';
 import {Panel} from './hideBody.component';
+import {AssigneeList} from './assignee';
 import { GhApiSrv} from './ghApiSrv.service';
 
 @Component({
@@ -13,7 +14,9 @@ template: `
     </section>
         <ul   *ngFor="let issue of issues">
             <li class='login'>login:{{issue.login}}</li>
-            <li>assigneeLogin: {{issue.assigneeLogin}} </li>
+            <li>assigneeLogin:{{issue.aLogin}} 
+            <aloginList [people]=issue.assigneesLogin></aloginList>
+            </li>
             <li>title:{{issue.title}}</li>
              <panel class ='body' [stuff]=issue.body>click to expand</panel> 
         </ul>
@@ -33,10 +36,6 @@ styles:[`
 .body {
     color: blue;
 }
-
-}
-
-
 `],
 })
 

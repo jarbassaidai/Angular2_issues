@@ -1,7 +1,12 @@
 
 export class Issue {
     login : string; 
-    assigneeLogin : string; 
+    aLogin: string; 
+    assigneesLogin : ALoginX[]; 
     title : string; 
     body: string; 
 };
+
+export class ALoginX { 
+    login: string; 
+}

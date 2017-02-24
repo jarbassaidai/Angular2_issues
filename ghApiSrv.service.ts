@@ -8,7 +8,7 @@ import {Last7Days} from './last7days';
 
 
 
-import {Issue} from './issue';
+import { ALoginX, Issue } from './issue';
 
 @Injectable()
 export class GhApiSrv {
@@ -65,7 +65,8 @@ function toIssuesArray(r:any[]) : Issue[]{
  function singleIssue(ir: any) : Issue {
     return  <Issue>({ 
         login: ir.user.login, //(ir.assignee =='')? 'no assignee': ir.assignee,
-        assigneeLogin: (ir.assignee == null)? 'no assignee': ir.assignee, //ir.assignee,
+        aLogin: (ir.assignee ==null) ? "no assignee": ir.assignee.login, 
+        assigneesLogin: (ir.assignee == null)? EmptyALoginX(): AssigneeObjs(ir.assignees), //ir.assignee,
         title: ir.title, 
         body:  (ir.body == null)? 'empty' : ir.body 
     });
@@ -78,3 +79,20 @@ function  handleError(error: Response) {
         return Observable.throw(error.json().error || 'Server error');
     }
 
+function AssigneeObjs (ar: any[]) : ALoginX[] {
+    var sarray : ALoginX[] = []; 
+    for (var idx =0; idx < ar.length ; idx++ ){
+        sarray.push(ALogin(ar[idx]) ); 
+    }
+    return sarray; 
+}
+function ALogin (al:any) : ALoginX {
+    return ({login: al.login}); 
+}
+function EmptyALoginX () : ALoginX[] {
+    var blankA : ALoginX[] = []; 
+    //var blank : ALoginX = {login: "no assignee"};
+    //blank.login = "no assignee"; 
+    //blankA[0] = blank;
+    return null;
+}

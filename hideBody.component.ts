@@ -21,7 +21,7 @@ export class Panel {
     visible: boolean = true;
     displayText = 'hide';
     constructor () {
-    this.visible = true;  
+      this.visible = true;  
     }
     toggle () {
       this.visible = !this.visible;

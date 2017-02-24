@@ -5,10 +5,12 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent }  from './app.component';
 import {IssueListComponent} from './issueList.component';
 import {Panel} from './hideBody.component';
+import {AssigneeList} from './assignee';
 
 @NgModule({
   imports:      [ BrowserModule,FormsModule, HttpModule ],
-  declarations: [ AppComponent,IssueListComponent,Panel],
+  declarations: [ AppComponent,IssueListComponent,
+                  Panel,AssigneeList],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
