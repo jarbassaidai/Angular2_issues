@@ -10,7 +10,7 @@ import * as moment from 'moment/moment.js';
 export class Last7Days { 
     priorD: string;
     constructor () { 
-        this.priorD =  moment().subtract(7,'days').format("YYYY-MM-DDTHH:MM:SSZ");
+        this.priorD =  moment().subtract(7,'days').format("YYYY-MM-DDTHH:mm:ssZ");
     }
     minus7D() : string {
         return this.priorD; 
