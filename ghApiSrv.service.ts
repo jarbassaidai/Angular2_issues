@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import {Http, Response,Headers,URLSearchParams} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map'; 
+import {Last7Days} from './last7days';
 
 
 
@@ -19,7 +20,7 @@ export class GhApiSrv {
         }
     getIssues(): Observable<Issue[]> {
         let params = new URLSearchParams();
-        params.set('since', issues7days());
+        params.set('since', new Last7Days().minus7D() );
         let issues = this.http
             .get(this.bassUrl,{
                 headers:this.getHeaders(),
@@ -77,12 +78,3 @@ function  handleError(error: Response) {
         return Observable.throw(error.json().error || 'Server error');
     }
 
-function issues7days () : string { 
-     // var d=  Date:'yyyymmddTHHMMSSZ'; 
-     // d.now(); 
-     // d. 604800; 
-    //let y = Moment().subtract(7,'days').format("YYYYMMDDTHHMMSSG");
-    //let r =  moment().format("YYYYMMDDTHHMMSSG");
-    //console.log(r);
-    return '20170207T000000G'; 
-}
