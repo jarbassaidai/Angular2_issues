@@ -36,6 +36,5 @@ example how to get angular2 issues through the gethub api
 <em>"click to expand"</em> displayed in the color <em>blue</em>. 
 </p>
 <ul> know bugs: 
-<li> server error may be returned a refresh of the page clears this error </li> 
 <li> assignee is a array of names that is not handled correctly </li> 
 </ul>
