@@ -36,5 +36,5 @@ example how to get angular2 issues through the gethub api
 <em>"click to expand"</em> displayed in the color <em>blue</em>. 
 </p>
 <ul> know bugs: 
-<li> GitHub Api for Since with a format of YYYY-MM-DDTHH:MM:SSZ will through and server error from time to time </li> 
+<li> GitHub Api for Since with a format of YYYY-MM-DDTHH:MM:SSZ will throw a server error from time to time </li> 
 </ul>
